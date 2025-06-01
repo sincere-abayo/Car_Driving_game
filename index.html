@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureSkillsDrive - Rwanda Skills Competition 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="ui">
+            <div id="startScreen" class="screen">
+                <div id="banner" class="animated-banner">RTB COMPETITION FUTURE SKILLS</div>
+                <div id="title">
+                    <h1 class="retro-title">FutureSkillsDrive</h1>
+                    <p class="subtitle">Navigate to the Magic Garden</p>
+                </div>
+                <div id="menu">
+                    <button id="startBtn" class="menu-btn">Start Race</button>
+                    <button id="settingsBtn" class="menu-btn">Settings</button>
+                    <button id="helpBtn" class="menu-btn">Help</button>
+                    <button id="exitBtn" class="menu-btn">Exit</button>
+                </div>
+            </div>
+            
+        <div id="gameScreen" class="screen hidden">
+    <div class="hud">
+        <div class="hud-item">
+            <span class="hud-label">Speed:</span>
+            <span class="hud-value"><span id="speed">0</span> km/h</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">Distance:</span>
+            <span class="hud-value"><span id="distanceValue">0</span>m</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">Stage:</span>
+            <span class="hud-value"><span id="stageValue">1</span></span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">Radio:</span>
+            <span class="hud-value"><span id="radioStatus">OFF</span></span>
+        </div>
+    </div>
+    
+    <div id="speedometer">
+        <span id="speedDisplay">0</span>
+        <div class="speed-label">km/h</div>
+    </div>
+    
+    <div class="stage-indicator">
+        Stage <span class="stage-number" id="stageDisplay">1</span>
+    </div>
+    
+    <div class="controls-info">
+        <h4>Controls</h4>
+        <div class="control-item">
+            <span class="control-key">W/↑</span>
+            <span>Accelerate</span>
+        </div>
+        <div class="control-item">
+            <span class="control-key">S/↓</span>
+            <span>Brake/Reverse</span>
+        </div>
+        <div class="control-item">
+            <span class="control-key">A/←</span>
+            <span>Steer Left</span>
+        </div>
+        <div class="control-item">
+            <span class="control-key">D/→</span>
+            <span>Steer Right</span>
+        </div>
+        <div class="control-item">
+            <span class="control-key">Space</span>
+            <span>Emergency Brake</span>
+        </div>
+        <div class="control-item">
+            <span class="control-key">R</span>
+            <span>Toggle Radio</span>
+        </div>
+    </div>
+</div>
+
+            
+            <div id="settingsScreen" class="screen hidden">
+                <h2>Settings</h2>
+                <div class="setting">
+                    <label>Music Volume: <input type="range" id="musicVolume" min="0" max="100" value="50"></label>
+                </div>
+                <div class="setting">
+                    <label>Sound Effects: <input type="range" id="sfxVolume" min="0" max="100" value="70"></label>
+                </div>
+                <button id="backBtn" class="menu-btn">Back</button>
+            </div>
+            
+            <div id="helpScreen" class="screen hidden">
+                <h2>How to Play</h2>
+                <div class="help-content">
+                    <p><strong>Controls:</strong></p>
+                    <p>← → Arrow Keys: Steer left/right</p>
+                    <p>Spacebar: Brake</p>
+                    <p>F: Toggle Free Ride Mode</p>
+                    <p>R: Toggle Radio</p>
+                    <p>ESC: Return to menu</p>
+                    <p><strong>Objective:</strong> Navigate through 3 stages to reach the Magic Garden!</p>
+                </div>
+                <button id="helpBackBtn" class="menu-btn">Back</button>
+            </div>
+            
+            <div id="gameOverScreen" class="screen hidden">
+                <h2>Game Over</h2>
+                <div id="finalStats"></div>
+                <button id="restartBtn" class="menu-btn">Try Again</button>
+                <button id="menuBtn" class="menu-btn">Main Menu</button>
+            </div>
+            
+            <div id="victoryScreen" class="screen hidden">
+                <h2>Congratulations!</h2>
+                <p class="victory-text">You've reached the Magic Garden!</p>
+                <div id="victoryStats"></div>
+                <button id="victoryRestartBtn" class="menu-btn">Play Again</button>
+                <button id="victoryMenuBtn" class="menu-btn">Main Menu</button>
+            </div>
+        </div>
+    </div>
+    <script src="audio.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
